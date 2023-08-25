@@ -9,6 +9,7 @@ class Hello_word extends StatelessWidget {
       fontSize: 24.0,
       color: Colors.blue,
     );
+
     return const Scaffold(
       body: SafeArea(
         child: Column(
@@ -18,6 +19,11 @@ class Hello_word extends StatelessWidget {
                 Text(
                   'Nombre del Usuario',
                   style: textStyle,
+                ),
+                SizedBox(width: 50.0),
+                CircleAvatar(
+                  backgroundColor: Colors.brown,
+                  child: const Text('W'),
                 )
               ],
             )
