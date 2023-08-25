@@ -11,7 +11,8 @@ class Hello_word extends StatelessWidget {
         children: [
           Row(
             children: [
-              Text('Nombre del Usuario', style: TextStyle( fontSize: 24.0, color: Colors.blue,),)
+              Text('Nombre del Usuario', style: TextStyle( fontSize: 24.0, color: Colors.blue,),),
+              SizedBox(width: 50,0)
             ],
           )
         ],
