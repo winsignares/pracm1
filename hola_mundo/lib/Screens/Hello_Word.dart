@@ -16,24 +16,34 @@ class Hello_word extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.all(8.0),
-              child: Row(
-                
-                children: [
-                  Text(
-                    'Nombre del Usuario',
-                    style: textStyle,
-                  ),
-                  Expanded(child: SizedBox()),
-                  CircleAvatar(
-                    backgroundColor: Colors.brown,
-                    child: const Text('W'),
-                  )
-                ],
-              ),
-            )
+              child: CustomerNav(textStyle),
+            ),
+            //carrusell Martin
+
+
+            //pageview josuad
+
+
           ],
         ),
       ),
     );
+  }
+
+  Row CustomerNav(TextStyle textStyle) {
+    return Row(
+              
+              children: [
+                Text(
+                  'Nombre del Usuario',
+                  style: textStyle,
+                ),
+                Expanded(child: SizedBox()),
+                CircleAvatar(
+                  backgroundColor: Colors.brown,
+                  child: Text('W'),
+                )
+              ],
+            );
   }
 }
