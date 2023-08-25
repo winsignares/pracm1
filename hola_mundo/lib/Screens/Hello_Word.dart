@@ -14,18 +14,22 @@ class Hello_word extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Row(
-              children: [
-                Text(
-                  'Nombre del Usuario',
-                  style: textStyle,
-                ),
-                SizedBox(width: 50.0),
-                CircleAvatar(
-                  backgroundColor: Colors.brown,
-                  child: const Text('W'),
-                )
-              ],
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Row(
+                
+                children: [
+                  Text(
+                    'Nombre del Usuario',
+                    style: textStyle,
+                  ),
+                  Expanded(child: SizedBox()),
+                  CircleAvatar(
+                    backgroundColor: Colors.brown,
+                    child: const Text('W'),
+                  )
+                ],
+              ),
             )
           ],
         ),
