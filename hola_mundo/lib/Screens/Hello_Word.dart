@@ -10,8 +10,7 @@ class Hello_word extends StatelessWidget {
       color: Colors.blue,
     );
 
-    const row = Row(
-                
+    const CustomerNav = Row(                
                 children: [
                   Text(
                     'Nombre del Usuario',
@@ -24,14 +23,15 @@ class Hello_word extends StatelessWidget {
                   )
                 ],
               );
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
             Padding(
               padding: EdgeInsets.all(8.0),
-              child: row,
-            )
+              child: CustomerNav,
+            ),
+            
           ],
         ),
       ),
