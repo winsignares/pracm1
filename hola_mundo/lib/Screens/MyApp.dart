@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hola_mundo/Screens/Hello_Word.dart';
-import 'package:hola_mundo/Screens/Home_Page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
