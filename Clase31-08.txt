@@ -1,0 +1,76 @@
+import 'package:flutter/material.dart';
+
+class Hello_word extends StatelessWidget {
+  const Hello_word({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    const textStyle = TextStyle(
+      fontSize: 24.0,
+      color: Colors.blue,
+    );
+
+    const CustomerNav = Row(
+      children: [
+        Text(
+          'Nombre del Usuario',
+          style: textStyle,
+        ),
+        Expanded(child: SizedBox()),
+        CircleAvatar(
+          backgroundColor: Colors.brown,
+          child: Text('W'),
+        )
+      ],
+    );
+    
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: CustomerNav,
+            ),
+
+            // PageView
+            Container(
+              height: 150.0,
+              child: PageView(
+                children: [
+                  Container(
+                    color: Colors.red,
+                    child: Center(child: Text('foto1')),
+                  ),
+                  Container(
+                    color: Colors.blue,
+                    child: Center(child: Text('foto2')),
+                  ),
+                  Container(
+                    color: Colors.green,
+                    child: Center(child: Text('foto3')),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 15.0),
+            
+            // ListView
+            Expanded(
+              child: ListView.builder(
+                itemCount: 20,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    height: 50,
+                    color:index % 2 == 0 ? Colors.red: Colors.blue,
+                    child: Center(child: Text('opc $index')),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }  
+}
