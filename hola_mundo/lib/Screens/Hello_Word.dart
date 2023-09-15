@@ -5,6 +5,9 @@ class Hello_word extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final PageController controller = PageController(
+      initialPage: 0,
+    );
     const textStyle = TextStyle(
       fontSize: 24.0,
       color: Colors.blue,
@@ -33,19 +36,22 @@ class Hello_word extends StatelessWidget {
             ),
 
             //Pafeview
-            Container(
-              height: 150.0,
-              color: Colors.red,
-            ),
-            SizedBox(
-              height: 15.0,
+            PageView(
+              /// [PageView.scrollDirection] defaults to [Axis.horizontal].
+              /// Use [Axis.vertical] to scroll vertically.
+              controller: controller,
+             
             ),
             //listview
             Container(
               height: 150.0,
               color: Colors.green,
               child: ListView(children: [
-                Container(height: 50.0, child: Text('1'), color: Colors.amber,),
+                Container(
+                  height: 50.0,
+                  child: Text('1'),
+                  color: Colors.amber,
+                ),
                 Text('2'),
               ]),
             )
