@@ -1,64 +1,68 @@
 import 'package:flutter/material.dart';
 
-class CustomerSetting extends StatelessWidget {
+class CustomerSetting extends StatefulWidget {
   const CustomerSetting({super.key});
- static final String nombre = 'Configuracion';
+  static const String nombre = 'Configuracion';
+
+  @override
+  State<CustomerSetting> createState() => _CustomerSettingState();
+}
+
+class _CustomerSettingState extends State<CustomerSetting> {
+  bool _colorsecundario = false;
+  int _sexo = 1;
+  String _nombre = "William";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings', 
-                          style: TextStyle( 
-                                    color: Colors.white, 
-                                    fontSize: 18.0
-                                  ), 
-                      ),
+        title: const Text(
+          'Settings',
+          style: TextStyle(color: Colors.white, fontSize: 18.0),
+        ),
         backgroundColor: Colors.blue,
       ),
       body: SafeArea(
-        child:ListView(
+        child: ListView(
           children: [
             Container(
-              child: const Text('Configuración', style: TextStyle( fontSize: 30.0, fontWeight: FontWeight.bold),),
+              child: const Text(
+                'Configuración',
+                style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+              ),
             ),
             const Divider(),
             SwitchListTile(
-              value: true, 
-              title: const Text('Color Secundario'),
-              onChanged: (value){
-                print(value);
-              }
-            ),
+                value: _colorsecundario,
+                title: const Text('Color Secundario'),
+                onChanged: (value) {
+                  setState(() {
+                    _colorsecundario = value;
+                  });
+                }),
             const Divider(),
             RadioListTile(
-              value: 1, 
-              title: const Text('Masculino'),
-              groupValue: 1, 
-              onChanged: (value){
-
-              }
-            ),
+                value: 1,
+                title: const Text('Masculino'),
+                groupValue: 1,
+                onChanged: (value) {}),
             RadioListTile(
-              value: 2, 
-              title: const Text('Femenino'),
-              groupValue: 1, 
-              onChanged: (value){
-
-              }
-            ),
+                value: 2,
+                title: const Text('Femenino'),
+                groupValue: 1,
+                onChanged: (value) {}),
             const Divider(),
-             Container(
+            Container(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-               child: TextField(
+              child: TextField(
                 decoration: const InputDecoration(
                   labelText: 'Nombre',
                   helperText: 'escriba el nombre del Usuario',
                 ),
-                onChanged: (value){
-             
-                },
-                         ),
-             ),
+                onChanged: (value) {},
+              ),
+            ),
           ],
         ),
       ),
