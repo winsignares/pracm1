@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: MyHomePage2.nombre,
+      initialRoute: CustomerSetting.nombre,
       routes: {
          MyHomePage2.nombre:(context) => MyHomePage2(),
          CustomerSetting.nombre:(context) => CustomerSetting(),
