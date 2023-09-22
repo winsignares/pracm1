@@ -12,13 +12,21 @@ class _CustomerSettingState extends State<CustomerSetting> {
   bool _colorsecundario = false;
   int _sexo = 1;
   String _nombre = "William";
+  late TextEditingController _textEditingController;
 
-  _setSelectedRadio( int valor){
+  _setSelectedRadio(int valor) {
     _sexo = valor;
-    setState(() {
-      
-    });
+    setState(() {});
   }
+
+  @override
+  void initState() {
+    super.initState();
+    _textEditingController = TextEditingController(
+      text: _nombre
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,24 +61,28 @@ class _CustomerSettingState extends State<CustomerSetting> {
                 title: const Text('Masculino'),
                 groupValue: _sexo,
                 onChanged: (value) {
-                  _setSelectedRadio(value as  int);
+                  _setSelectedRadio(value as int);
                 }),
             RadioListTile(
                 value: 2,
                 title: const Text('Femenino'),
                 groupValue: _sexo,
                 onChanged: (value) {
- _setSelectedRadio(value as  int);
+                  _setSelectedRadio(value as int);
                 }),
             const Divider(),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: TextField(
+                controller: _textEditingController,
                 decoration: const InputDecoration(
                   labelText: 'Nombre',
                   helperText: 'escriba el nombre del Usuario',
                 ),
-                onChanged: (value) {},
+                onChanged: (value) {
+                  _nombre = value;
+                  print(_nombre);
+                },
               ),
             ),
           ],
