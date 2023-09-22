@@ -5,6 +5,14 @@ class CustomerSetting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: SafeArea(child: Center(child: Container(child: const Text('Estamos en la Pagina de Configuraciones'),))));
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
+          child: Container(
+            child: const Text('Estamos en la Pagina de Configuraciones'),
+            ),
+          ),
+      ),
+    );
   }
 }
