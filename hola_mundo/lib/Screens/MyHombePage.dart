@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Widgets/CustomerDrawer.dart';
+
 class MyHomePage2 extends StatelessWidget {
   const MyHomePage2({super.key});
   static const String nombre = 'Home';
@@ -13,6 +15,7 @@ class MyHomePage2 extends StatelessWidget {
         ),
         backgroundColor: Colors.blue,
       ),
+      drawer: const CustmerDrawer(),
       body: SafeArea(
         child: Center(
           child: Container(

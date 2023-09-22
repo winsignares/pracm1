@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Widgets/CustomerDrawer.dart';
+
 class CustomerSetting extends StatefulWidget {
   const CustomerSetting({super.key});
   static const String nombre = 'Configuracion';
@@ -37,6 +39,7 @@ class _CustomerSettingState extends State<CustomerSetting> {
         ),
         backgroundColor: Colors.blue,
       ),
+       drawer: const CustmerDrawer(),
       body: SafeArea(
         child: ListView(
           children: [
