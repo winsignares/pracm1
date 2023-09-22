@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hola_mundo/Screens/CustomerSetting.dart';
-import 'package:hola_mundo/Screens/Hello_Word.dart';
-import 'package:hola_mundo/Screens/Home_Page.dart';
+import 'package:hola_mundo/Screens/MyHombePage.dart';
 
-import 'MyHombePage.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -15,11 +13,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-       
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: CustomerSetting() //const MyHomePage(title: 'Flutter Movil 1'),
+      initialRoute: MyHomePage2.nombre,
+      routes: {
+         MyHomePage2.nombre:(context) => MyHomePage2(),
+         CustomerSetting.nombre:(context) => CustomerSetting(),
+      },
+      //home: CustomerSetting() //const MyHomePage(title: 'Flutter Movil 1'),
     );
   }
 }
