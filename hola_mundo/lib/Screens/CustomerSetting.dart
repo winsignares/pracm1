@@ -13,6 +13,12 @@ class _CustomerSettingState extends State<CustomerSetting> {
   int _sexo = 1;
   String _nombre = "William";
 
+  _setSelectedRadio( int valor){
+    _sexo = valor;
+    setState(() {
+      
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,13 +51,17 @@ class _CustomerSettingState extends State<CustomerSetting> {
             RadioListTile(
                 value: 1,
                 title: const Text('Masculino'),
-                groupValue: 1,
-                onChanged: (value) {}),
+                groupValue: _sexo,
+                onChanged: (value) {
+                  _setSelectedRadio(value as  int);
+                }),
             RadioListTile(
                 value: 2,
                 title: const Text('Femenino'),
-                groupValue: 1,
-                onChanged: (value) {}),
+                groupValue: _sexo,
+                onChanged: (value) {
+ _setSelectedRadio(value as  int);
+                }),
             const Divider(),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
