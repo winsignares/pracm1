@@ -5,12 +5,33 @@ class MyHomePage2 extends StatelessWidget {
   static final String nombre = 'Home';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body:
-     SafeArea(child: Center(
-      child: Container(
-        child: const Text('Estamos en la Pagina de My Home Page'),
-        ),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+                          "Principal", 
+                      style: TextStyle(
+                                color: Colors.white
+                            ),
+                      ),
+        backgroundColor: Colors.blue,
+      ),
+      body:SafeArea(
+        child: Center(
+                child: Container(
+                        padding: EdgeInsets.symmetric(horizontal: 25.0),                  
+                        child:const Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text('Color: '),
+                            const Divider(),
+                             const Text('Sexo: '),
+                            const Divider(),
+                            const Text('Nombre : '),
+
+                          ],
+                        ),
+                      ),
+              ),
         ),
     );
   }
