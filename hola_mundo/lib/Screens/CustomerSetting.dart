@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hola_mundo/localstorage/Sharepreference.dart';
 
 import '../Widgets/CustomerDrawer.dart';
 
@@ -15,6 +16,7 @@ class _CustomerSettingState extends State<CustomerSetting> {
   int _sexo = 1;
   String _nombre = "William";
   late TextEditingController _textEditingController;
+  final prefs = PrefernciaUsuario();
 
   _setSelectedRadio(int valor) {
     _sexo = valor;
@@ -24,6 +26,7 @@ class _CustomerSettingState extends State<CustomerSetting> {
   @override
   void initState() {
     super.initState();
+    prefs.colosecundario = true;
     _textEditingController = TextEditingController(
       text: _nombre
     );
@@ -56,6 +59,7 @@ class _CustomerSettingState extends State<CustomerSetting> {
                 onChanged: (value) {
                   setState(() {
                     _colorsecundario = value;
+                    prefs.colosecundario = value;
                   });
                 }),
             const Divider(),
