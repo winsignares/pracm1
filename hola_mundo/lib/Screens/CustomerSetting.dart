@@ -28,7 +28,8 @@ class _CustomerSettingState extends State<CustomerSetting> {
   void initState() {
     super.initState();
     prefs.ultimapagina = CustomerSetting.nombre;
-     _colorsecundario = prefs.colosecundario;
+    _colorsecundario = prefs.colosecundario;
+    _sexo = prefs.sexo;
     _textEditingController = TextEditingController(
       text: prefs.nombre
     );
@@ -42,7 +43,7 @@ class _CustomerSettingState extends State<CustomerSetting> {
           'Settings',
           style: TextStyle(color: Colors.white, fontSize: 18.0),
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: prefs.colosecundario ? Colors.blue : Colors.red,
       ),
        drawer: const CustmerDrawer(),
       body: SafeArea(
