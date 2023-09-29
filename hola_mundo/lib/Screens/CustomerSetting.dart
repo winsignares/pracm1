@@ -20,15 +20,17 @@ class _CustomerSettingState extends State<CustomerSetting> {
 
   _setSelectedRadio(int valor) {
     _sexo = valor;
+    prefs.sexo = valor;
     setState(() {});
   }
 
   @override
   void initState() {
     super.initState();
-    prefs.colosecundario = true;
+    prefs.ultimapagina = CustomerSetting.nombre;
+     _colorsecundario = prefs.colosecundario;
     _textEditingController = TextEditingController(
-      text: _nombre
+      text: prefs.nombre
     );
   }
 
@@ -88,6 +90,7 @@ class _CustomerSettingState extends State<CustomerSetting> {
                 ),
                 onChanged: (value) {
                   _nombre = value;
+                  prefs.nombre = value;
                   print(_nombre);
                 },
               ),
